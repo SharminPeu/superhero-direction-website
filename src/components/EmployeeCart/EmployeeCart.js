@@ -1,32 +1,37 @@
 import React from 'react';
+import ShowCart from '../ShowCart/ShowCart';
 import "./EmployeeCart.css"
-
+//  Employee Cart Section 
 const EmployeeCart = (props) => {
-    const{employeeCart}=props;
-    const totalReducer=(prevValue,currentValue)=>prevValue+currentValue.salary
+    const { employeeCart } = props;
+    const totalReducer = (prevValue, currentValue) => prevValue + currentValue.salary
 
-   const total=employeeCart.reduce(  totalReducer   ,  0)
+    const total = employeeCart.reduce(totalReducer, 0)
     return (
         <>
-                <h3>
-                 Added Employee:{employeeCart.length}
-               </h3>
-                <h2>Total Salary:$ {total}</h2>
-                <div className="">
-                   {
-                       employeeCart.map( employee=>(
-                        //    key={employee.name}
-                       <div className="d-flex justify-content-center align-items-center employee-cart "> <div>
-                        
-                           <img src={employee.img} alt="" /></div><div className="employee-cart-name mx-auto ">
-                           
-                           {employee.name}</div></div>))
-                   }
-            
-               </div>
+            <h3>
+                Employee Added:{employeeCart.length}
+            </h3>
+            <h2>Total Salary Cost:$ {total}</h2>
+            <div className="cart">
+                {
+                    employeeCart.map(employee => <ShowCart
+                        key={employee.name}
+                        name={employee.name}
+                        img={employee.img}
+                    >
+
+                    </ShowCart>
+                    )}
+
+
+
+
+
+            </div>
 
         </>
-    );
-};
+    )
+}
 
 export default EmployeeCart;

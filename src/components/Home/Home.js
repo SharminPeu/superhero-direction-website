@@ -4,13 +4,17 @@ import EmployeeCart from '../EmployeeCart/EmployeeCart';
 import "./Home.css";
 
 const Home = () => {
+    // set load data 
     const [employees,setEmployees]=useState([])
-    const [employeeCart,setEmployeeCart]=useState([])
+    
+    // load the data from fakedata
     useEffect(()=>{
         fetch('./fakeData.JSON')
         .then(res=>res.json())
         .then(data=>setEmployees(data))
     },[])
+    
+    const [employeeCart,setEmployeeCart]=useState([])
 
     // Handle Employee Button 
     const handleEmployee=(employee)=>{
@@ -21,8 +25,8 @@ const Home = () => {
     }
     return (
         <>
-           <div className="row">
-               <div className="col-md-9 left-side">
+           <div className="row mt-3">
+               <div className="col-md-9 ">
                    <div className="row">
                        {
                            employees.map((employee) =>(
@@ -40,6 +44,7 @@ const Home = () => {
                </div>
                <div className="col-md-3">
                    <EmployeeCart
+               
                    employeeCart={employeeCart}
                    ></EmployeeCart>
                </div>

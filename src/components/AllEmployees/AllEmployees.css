@@ -1,13 +1,22 @@
+/* manage overflow  */
 body{
     overflow-x: hidden;
 }
+/* single employee card style  */
 .employee-card{
 margin: 10px;
-border: 1px solid grey;
+border: 1px solid rgb(243, 134, 134);
+box-shadow:4px 4px 4px rgb(243, 134, 134);
 border-radius: 5px;
 padding: 10px;
-background-color: rgb(245, 212, 200);
+background-color:rgb(169, 216, 248);
+transition: 1s;
 }
+.employee-card:hover{
+    
+    transition: 1s;
+background-color: rgb(146, 241, 146);
+    }
 .employee-image img {
     width:100px;
     height: 100px;

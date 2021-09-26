@@ -1,4 +1,8 @@
 .header{
-    background-color: black;
-    color: white;
+    background-color:rgb(247, 208, 193);
+    color:rgba(0, 0, 0, 0.664);
+    line-height: 200px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
